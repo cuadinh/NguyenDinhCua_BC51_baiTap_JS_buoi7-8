@@ -51,7 +51,7 @@ document.getElementById("btnSoDuongNhoNhat").onclick = function () {
       "Không có số dương";
     return;
   }
-  
+
   var minSoDuong = arrSoDuong[0];
   for (var j = 1; j < arrSoDuong.length; j++) {
     if (minSoDuong > arrSoDuong[j]) {
@@ -62,13 +62,25 @@ document.getElementById("btnSoDuongNhoNhat").onclick = function () {
 };
 
 //5. Tìm số chẵn cuối cùng trong mảng
-document.getElementById('btnSoChanCuoiCung').onclick = function(){
+document.getElementById("btnSoChanCuoiCung").onclick = function () {
   var SoChan = -1;
-  for(i=0; i<arrDanhSach.length; i++){
-    if(arrDanhSach[i]%2===0){
+  for (i = 0; i < arrDanhSach.length; i++) {
+    if (arrDanhSach[i] % 2 === 0) {
       SoChan = arrDanhSach[i];
     }
   }
   document.getElementById("hienThiSoChanCuoiCung").innerHTML = SoChan;
- 
-}
+};
+//6. Đổi chỗ 2 giá trị trong mảng theo vị trí
+document.getElementById("btnDoiCho").onclick = function () {
+  var viTri_1 = Number(document.getElementById("viTri-1").value);
+  var viTri_2 = Number(document.getElementById("viTri-2").value);
+  var giaTriTam = 0;
+  giaTriTam = arrDanhSach[viTri_1];
+  arrDanhSach[viTri_1] = arrDanhSach[viTri_2];
+
+  arrDanhSach[viTri_2] = giaTriTam;
+  console.log(arrDanhSach)
+
+  document.getElementById("hienThiDoiCho").innerHTML = arrDanhSach;
+};
