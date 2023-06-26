@@ -60,3 +60,15 @@ document.getElementById("btnSoDuongNhoNhat").onclick = function () {
   }
   document.getElementById("hienThiSoDuongNhoNhat").innerHTML = minSoDuong;
 };
+
+//5. Tìm số chẵn cuối cùng trong mảng
+document.getElementById('btnSoChanCuoiCung').onclick = function(){
+  var SoChan = -1;
+  for(i=0; i<arrDanhSach.length; i++){
+    if(arrDanhSach[i]%2===0){
+      SoChan = arrDanhSach[i];
+    }
+  }
+  document.getElementById("hienThiSoChanCuoiCung").innerHTML = SoChan;
+ 
+}
