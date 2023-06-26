@@ -18,3 +18,14 @@ var tongSoDuong = 0;
     }
     document.getElementById('hienThiTongSoDuong').innerHTML = tongSoDuong;
 }
+//2. Đếm có bao nhiêu số dương trong mảng
+document.getElementById('btnDemSoDuong').onclick = function(){
+    var soDem = 0;
+    for(i=0; i<arrDanhSach.length; i++){
+        if(arrDanhSach[i]>0){
+            soDem++;
+        }
+    } 
+    document.getElementById('hienThiDemSoDuong').innerHTML = soDem;
+
+}
