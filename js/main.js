@@ -1,41 +1,62 @@
 var arrDanhSach = [];
-function themSo(){
-    var soNhap = Number(document.getElementById('soNhap').value);
-    arrDanhSach.push(soNhap);
-    document.getElementById('hienThiDanhSachSo').innerHTML = arrDanhSach;
-    // console.log(arrDanhSach)
+function themSo() {
+  var soNhap = Number(document.getElementById("soNhap").value);
+  arrDanhSach.push(soNhap);
+  document.getElementById("hienThiDanhSachSo").innerHTML = arrDanhSach;
+  // console.log(arrDanhSach)
 }
-
 
 // 1. Tổng các số dương trong mảng
-document.getElementById('btnTongSoDuong').onclick = function(){
-var tongSoDuong = 0;
+document.getElementById("btnTongSoDuong").onclick = function () {
+  var tongSoDuong = 0;
 
-    for(i=0; i<arrDanhSach.length; i++){
-        if(arrDanhSach[i]>0){
-            tongSoDuong += arrDanhSach[i];
-        }
+  for (var i = 0; i < arrDanhSach.length; i++) {
+    if (arrDanhSach[i] > 0) {
+      tongSoDuong += arrDanhSach[i];
     }
-    document.getElementById('hienThiTongSoDuong').innerHTML = tongSoDuong;
-}
+  }
+  document.getElementById("hienThiTongSoDuong").innerHTML = tongSoDuong;
+};
 //2. Đếm có bao nhiêu số dương trong mảng
-document.getElementById('btnDemSoDuong').onclick = function(){
-    var soDem = 0;
-    for(i=0; i<arrDanhSach.length; i++){
-        if(arrDanhSach[i]>0){
-            soDem++;
-        }
-    } 
-    document.getElementById('hienThiDemSoDuong').innerHTML = soDem;
-
-}
-// 3. Tìm số nhỏ nhất trong mảng
-document.getElementById('btnTimSoNhoNhat').onclick = function(){
-    var minNumber = arrDanhSach[0];
-    for(i=1; i< arrDanhSach.length; i++){
-        if(minNumber>arrDanhSach[i]){
-            minNumber = arrDanhSach[i];
-        }
+document.getElementById("btnDemSoDuong").onclick = function () {
+  var soDem = 0;
+  for (var i = 0; i < arrDanhSach.length; i++) {
+    if (arrDanhSach[i] > 0) {
+      soDem++;
     }
-    document.getElementById('hienThiSoNhoNhat').innerHTML = minNumber;
-}
+  }
+  document.getElementById("hienThiDemSoDuong").innerHTML = soDem;
+};
+// 3. Tìm số nhỏ nhất trong mảng
+document.getElementById("btnTimSoNhoNhat").onclick = function () {
+  var minNumber = arrDanhSach[0];
+  for (var i = 1; i < arrDanhSach.length; i++) {
+    if (minNumber > arrDanhSach[i]) {
+      minNumber = arrDanhSach[i];
+    }
+  }
+  document.getElementById("hienThiSoNhoNhat").innerHTML = minNumber;
+};
+//4. Tìm số dương nhỏ nhất trong mảng
+document.getElementById("btnSoDuongNhoNhat").onclick = function () {
+  var arrSoDuong = [];
+  for (var i = 1; i < arrDanhSach.length; i++) {
+    if (arrDanhSach[i] > 0) {
+      arrSoDuong.push(arrDanhSach[i]);
+    }
+  }
+  // kiem tra có số dương hay không
+  if (arrSoDuong.length === 0) {
+    document.getElementById("hienThiSoDuongNhoNhat").innerHTML =
+      "Không có số dương";
+    return;
+  }
+  
+  var minSoDuong = arrSoDuong[0];
+  for (var j = 1; j < arrSoDuong.length; j++) {
+    if (minSoDuong > arrSoDuong[j]) {
+      minSoDuong = arrSoDuong[j];
+    }
+  }
+  document.getElementById("hienThiSoDuongNhoNhat").innerHTML = minSoDuong;
+};
