@@ -29,3 +29,13 @@ document.getElementById('btnDemSoDuong').onclick = function(){
     document.getElementById('hienThiDemSoDuong').innerHTML = soDem;
 
 }
+// 3. Tìm số nhỏ nhất trong mảng
+document.getElementById('btnTimSoNhoNhat').onclick = function(){
+    var minNumber = arrDanhSach[0];
+    for(i=1; i< arrDanhSach.length; i++){
+        if(minNumber>arrDanhSach[i]){
+            minNumber = arrDanhSach[i];
+        }
+    }
+    document.getElementById('hienThiSoNhoNhat').innerHTML = minNumber;
+}
