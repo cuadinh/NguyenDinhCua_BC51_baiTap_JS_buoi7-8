@@ -84,3 +84,19 @@ document.getElementById("btnDoiCho").onclick = function () {
 
   document.getElementById("hienThiDoiCho").innerHTML = arrDanhSach;
 };
+
+//7. lam sau
+
+//8. Tìm số nguyên tố đầu tiên trong mảng
+document.getElementById('btnSNTDauTien').onclick = function(){
+  var SNDauTien = -1;
+  for (i = 0; i < arrDanhSach.length; i++){
+    if(Number.isInteger(arrDanhSach[i])){
+      SNDauTien = arrDanhSach[i];
+      break;
+    }
+  }
+  document.getElementById("hienThiSNTDauTien").innerHTML = SNDauTien;
+console.log(SNDauTien)
+}
+
