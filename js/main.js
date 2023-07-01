@@ -80,23 +80,39 @@ document.getElementById("btnDoiCho").onclick = function () {
   arrDanhSach[viTri_1] = arrDanhSach[viTri_2];
 
   arrDanhSach[viTri_2] = giaTriTam;
-  console.log(arrDanhSach)
+  console.log(arrDanhSach);
 
   document.getElementById("hienThiDoiCho").innerHTML = arrDanhSach;
 };
 
 //7. lam sau
 
+
+
 //8. Tìm số nguyên tố đầu tiên trong mảng
-document.getElementById('btnSNTDauTien').onclick = function(){
-  var SNDauTien = -1;
-  for (i = 0; i < arrDanhSach.length; i++){
-    if(Number.isInteger(arrDanhSach[i])){
-      SNDauTien = arrDanhSach[i];
+document.getElementById("btnSNTDauTien").onclick = function () {
+  for (i = 0; i < arrDanhSach.length; i++) {
+    var checkSNT = true;
+    
+    for (j = 2; j <= Math.sqrt(arrDanhSach[i]); j++) {
+      if (arrDanhSach[i] % j === 0) {
+        checkSNT = false;
+        break;
+      }
+    }
+    if(arrDanhSach[i]=== 0  || arrDanhSach[i]===1){
+      checkSNT = false;
+    }
+    if (checkSNT == true) {
+      document.getElementById("hienThiSNTDauTien").innerHTML = arrDanhSach[i];
+      console.log(arrDanhSach[i]);
       break;
     }
+ 
   }
-  document.getElementById("hienThiSNTDauTien").innerHTML = SNDauTien;
-console.log(SNDauTien)
+  if (checkSNT == false) {
+  document.getElementById("hienThiSNTDauTien").innerHTML = -1;
 }
+};
+
 
