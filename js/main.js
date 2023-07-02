@@ -130,3 +130,25 @@ document.getElementById('btnDemSoNguyen').onclick = function() {
 document.getElementById('hienThiDemSoNguyen').innerHTML = 'so nguyen: ' + demSoNguyen;
 
 };
+
+//10. So sánh số lượng số dương và số âm xem số nào nhiều hơn
+
+document.getElementById('btnSoSanh').onclick = function (){
+  var coutAm=0;
+  var coutDuong = 0;
+  for (i=0; i<arrDanhSach.length; i++){
+    if(arrDanhSach[i]>0){
+      coutDuong++
+    }else if(arrDanhSach[i]<0){
+      coutAm++
+    }
+  }
+  if (coutAm>coutDuong){
+    var result = "so am lon hon so duong"
+  } else if(coutAm<coutDuong){
+    var result = "so am nho hon so duong"
+  }else{
+    var result = "so am bang so duong"
+  }
+  document.getElementById('hienThiSoSanh').innerHTML = result;
+}
