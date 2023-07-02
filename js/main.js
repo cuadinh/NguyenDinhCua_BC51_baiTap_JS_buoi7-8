@@ -85,7 +85,21 @@ document.getElementById("btnDoiCho").onclick = function () {
   document.getElementById("hienThiDoiCho").innerHTML = arrDanhSach;
 };
 
-//7. lam sau
+//7. Sắp xếp mảng theo thứ tự tăng dần
+  document.getElementById('btnSapXepTangDan').onclick = function (){
+
+    for(var i =0; i<arrDanhSach.length-1; i++){
+      for(var j = i +1; j< arrDanhSach.length; j++){
+        if(arrDanhSach[i]> arrDanhSach[j]){
+          var temp = arrDanhSach[i];
+          arrDanhSach[i] = arrDanhSach[j];
+          arrDanhSach[j] = temp;
+        }
+      }
+    }
+    document.getElementById('hienThiMangTangDan').innerHTML = arrDanhSach;
+
+  }
 
 //8. Tìm số nguyên tố đầu tiên trong mảng
 document.getElementById("btnSNTDauTien").onclick = function () {
