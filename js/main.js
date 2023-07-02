@@ -87,20 +87,18 @@ document.getElementById("btnDoiCho").onclick = function () {
 
 //7. lam sau
 
-
-
 //8. Tìm số nguyên tố đầu tiên trong mảng
 document.getElementById("btnSNTDauTien").onclick = function () {
   for (i = 0; i < arrDanhSach.length; i++) {
     var checkSNT = true;
-    
+
     for (j = 2; j <= Math.sqrt(arrDanhSach[i]); j++) {
       if (arrDanhSach[i] % j === 0) {
         checkSNT = false;
         break;
       }
     }
-    if(arrDanhSach[i]=== 0  || arrDanhSach[i]===1){
+    if (arrDanhSach[i] === 0 || arrDanhSach[i] === 1) {
       checkSNT = false;
     }
     if (checkSNT == true) {
@@ -108,11 +106,27 @@ document.getElementById("btnSNTDauTien").onclick = function () {
       console.log(arrDanhSach[i]);
       break;
     }
- 
   }
   if (checkSNT == false) {
-  document.getElementById("hienThiSNTDauTien").innerHTML = -1;
-}
+    document.getElementById("hienThiSNTDauTien").innerHTML = -1;
+  }
 };
 
+//9. Nhập một mảng số thực, tìm xem trong mảng có bao nhiêu số nguyên
+var arrSoThuc = [];
 
+document.getElementById("btnThemSo9").onclick = function () {
+  var soThuc = Number(document.getElementById("nhapSoThuc").value);
+  arrSoThuc.push(soThuc);
+  document.getElementById("hienThiMangSo").innerHTML = arrSoThuc;
+};
+document.getElementById('btnDemSoNguyen').onclick = function() {
+  var demSoNguyen = 0;
+  for(i=0; i<arrSoThuc.length; i++){
+    if (Number.isInteger(arrSoThuc[i])){
+      demSoNguyen++;
+    }
+  }
+document.getElementById('hienThiDemSoNguyen').innerHTML = 'so nguyen: ' + demSoNguyen;
+
+};
